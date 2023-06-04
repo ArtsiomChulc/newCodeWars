@@ -51,4 +51,82 @@ function grow(x){
     return x.reduce((a, b) => a * b)
 }
 
-console.log(grow([4, 1, 1, 1, 4]))
+// console.log(grow([4, 1, 1, 1, 4]))
+
+
+
+function solution(start, finish)
+{
+
+    let stepsToClimb = finish-start
+
+    let numBigJumps = Math.floor(stepsToClimb/3)
+
+    let numSmallJumps = stepsToClimb % 3
+
+    return numBigJumps + numSmallJumps
+}
+
+// console.log(solution(1, 12))
+
+
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+// If the function is passed a valid PIN string, return true, else return false.
+
+function validatePIN(pin) {
+    //return true or false
+    const n = pin.length;
+    if( n !== 4 && n !== 6)
+        return false;
+    for (const i in pin)
+        if (pin[i] > '9' || pin[i] < '0') {
+            return false;
+        }
+    return true;
+}
+
+// console.log(validatePIN('d236'))
+
+
+// Учитывая массив целых чисел, удалите наименьшее значение. Не изменяйте исходный массив/список.
+// Если есть несколько элементов с одинаковым значением, удалите элемент с более низким индексом.
+// Если вы получили пустой массив/список, верните пустой массив/список.
+// Не меняйте порядок оставшихся элементов.
+
+function removeSmallest(numbers) {
+    let smallest;
+    const newNums = [];
+    numbers.forEach(function(num) {
+        if (smallest > num || smallest === undefined) {
+            smallest = num;
+        }
+    });
+    const index = numbers.indexOf(smallest);
+    numbers.forEach(function(n, i) {
+        if (i !== index) {
+            newNums.push(n);
+        }
+    });
+    return newNums;
+}
+
+// console.log(removeSmallest([1, 3, 4, 0, 3, 6]))
+
+
+
+// Задача
+// Суммируйте все числа заданного массива (cq. list), кроме самого высокого и
+// самого низкого элемента (по значению, а не по индексу!).
+// Самый высокий или самый низкий элемент, соответственно, является одним элементом на каждом ребре,
+// даже если их несколько с одинаковым значением.
+// Помните о проверке ввода.
+
+// Проверка ввода
+// Если вместо массива задано пустое значение ( null, None, Nothing и т. д.),
+// или данный массив является пустым списком или списком только с 1 элементом, вернуть 0.
+
+function sumArray(array) {
+
+}
+
+console.log(sumArray([2, 4, 3, 9, 2, 4, 6, 1]))

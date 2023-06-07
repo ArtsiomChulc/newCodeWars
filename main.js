@@ -129,4 +129,103 @@ function sumArray(array) {
 
 }
 
-console.log(sumArray([2, 4, 3, 9, 2, 4, 6, 1]))
+// console.log(sumArray([2, 4, 3, 9, 2, 4, 6, 1]))
+
+
+
+
+// В этом ката вам нужно написать функцию, которая принимает строку и букву в качестве входных данных,
+//     а затем возвращает индекс второго вхождения этой буквы в строку. Если такой буквы в строке нет,
+//     то функция должна вернуть -1.
+// Если буква встречается в строке только один раз, то также следует вернуть -1.
+
+function secondSymbol(s, symbol) {
+    let counter = 0
+    for(let i = 0; i < s.length; i++){
+        if(s[i] == symbol) {
+            counter ++
+            if(counter > 1) return i
+        }
+    }
+    return -1
+}
+
+// console.log(secondSymbol('Hello world!!!','l'))
+
+
+
+// Если указано число от 0 до 9, верните его словами.
+// Вход :: 1
+// Выход :: "Один".
+// Если ваш язык поддерживает это, попробуйте использовать оператор switch.
+
+// function switchItUp(number){
+//     let out = '';
+//     switch (number) {
+//         case 1:
+//            return  out = 'One'
+//         case 2:
+//             return out = 'Two'
+//         case 3:
+//             return out = 'Three'
+//         case 4:
+//             return out = 'Four'
+//         case 5 :
+//             return out = 'Five'
+//         case 6:
+//             return out = 'Six'
+//         case 7:
+//             return out = 'Seven'
+//         case 8:
+//             return out = 'Eight'
+//         case 9:
+//             return out = 'Nine'
+//         case 0:
+//             return out = 'Zero'
+//     }
+// //Write your own Code!
+// }
+
+function switchItUp(n){
+    return ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][n]
+}
+
+// console.log(switchItUp(3))
+
+
+
+// Звездолет «Энтерпрайз» столкнулся с проблемой при создании программы
+// для приветствия всех, кто поднимается на борт.
+// Ваша задача — исправить код и заставить программу снова работать!
+
+function sayHello(name) {
+    return `Hello, ${name}`
+}
+
+// console.log(sayHello('Captain Kirk'))
+
+
+
+
+// Создайте функцию, которая принимает 2 целых числа в виде строки
+// в качестве входных данных и выводит сумму (также в виде строки):
+
+function sumStr(a,b) {
+    return String(Number(a)+Number(b))
+}
+
+// console.log(sumStr('2', '3'))
+
+
+
+
+// Ваша функция принимает два аргумента:
+// текущий возраст отца (лет)
+// текущий возраст его сына (лет)
+// Подсчитайте, сколько лет назад отец был вдвое старше сына
+// (или через сколько лет он будет вдвое старше). Ответ всегда больше или равен 0,
+// независимо от того, был он в прошлом или в будущем.
+
+function old(a, b) {
+
+}

@@ -264,33 +264,91 @@ function sumStr(a,b) {
 // console.log(tea4TeamFCC)
 
 
-// Function that returns a string representing a cup of green tea
-const prepareGreenTea = () => 'greenTea';
 
-// Function that returns a string representing a cup of black tea
-const prepareBlackTea = () => 'blackTea';
 
-/*
-Given a function (representing the tea type) and number of cups needed, the
-following function returns an array of strings (each representing a cup of
-a specific type of tea).
-*/
-const getTea = (prepareTea, numOfCups) => {
-    const teaCups = [];
+// // Function that returns a string representing a cup of green tea
+// const prepareGreenTea = () => 'greenTea';
+//
+// // Function that returns a string representing a cup of black tea
+// const prepareBlackTea = () => 'blackTea';
+//
+// /*
+// Given a function (representing the tea type) and number of cups needed, the
+// following function returns an array of strings (each representing a cup of
+// a specific type of tea).
+// */
+// const getTea = (prepareTea, numOfCups) => {
+//     const teaCups = [];
+//
+//     for(let cups = 1; cups <= numOfCups; cups += 1) {
+//         const teaCup = prepareTea();
+//         teaCups.push(teaCup);
+//     }
+//     return teaCups;
+// };
+//
+// // Only change code below this line
+// const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
+// const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
+// // Only change code above this line
+//
+// console.log(
+//     tea4GreenTeamFCC,
+//     tea4BlackTeamFCC
+// );
 
-    for(let cups = 1; cups <= numOfCups; cups += 1) {
-        const teaCup = prepareTea();
-        teaCups.push(teaCup);
+
+// const theLastOfLife = (n) => {
+//     let arr = [];
+//     for (let i = 1; i <= n; i++) {
+//         arr.push(i);
+//     }
+//     while (arr.length > 1) {
+//         arr = arr.filter((el, index) => index % 2 !== 0)
+//         arr.reverse()
+//     }
+//     return arr[0]
+// }
+//
+// console.log(theLastOfLife(9))
+
+
+// function calculateYears(principal, interest, tax, desired) {
+//     // your code
+//     let years = 0;
+//
+//     while (principal < desired) {
+//         const interestEarned = principal * interest;
+//         const taxableInterest = interestEarned - (interestEarned * tax);
+//         principal += taxableInterest;
+//         years++;
+//     }
+//
+//     return years;
+// }
+//
+// console.log(calculateYears(1000, 0.05, 0.18, 1100))
+
+
+const strings = ["000", "111", "2222", "33333", "444444"];
+function longestConsec(strarr, k) {
+    // your code
+    const n = strarr.length;
+
+    if (n === 0 || k > n || k <= 0) {
+        return "";
     }
-    return teaCups;
-};
 
-// Only change code below this line
-const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
-const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
-// Only change code above this line
+    let longestString = "";
+    for (let i = 0; i <= n - k; i++) {
+        const currentString = strarr.slice(i, i + k).join("");
+        debugger
+        if (currentString.length > longestString.length) {
+            longestString = currentString;
+        }
+    }
 
-console.log(
-    tea4GreenTeamFCC,
-    tea4BlackTeamFCC
-);
+    return longestString;
+}
+
+console.log(longestConsec(strings, 3))
